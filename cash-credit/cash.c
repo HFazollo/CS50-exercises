@@ -1,42 +1,48 @@
-#include <cs50.h>
 #include <stdio.h>
+#include <cs50.h>
 #include <math.h>
 
 int main(void)
 {
-    float n;
+    float change;
     do
     {
-        n = get_float("Change: ");
+        change = get_float("Change: ");
     }
-    while(n <= 0); // n = dollars
+    while(change < 0);
 
-    int c = round(n * 100); // c = cents
-    int x = 0; // x = coins
-
-    while(c >= 25)
+    if(change == 0)
     {
-        c = c - 25;
-        x++;
+        printf("You'll need 0 coins!\n");
     }
-
-    while(c >= 10)
+    else
     {
-        c = c - 10;
-        x++;
-    }
+        float c = round(change * 100);
+        int x = 0;
+        while(c >= 25)
+        {
+            c -= 25;
+            x++;
+        }
 
-    while(c >= 5)
-    {
-        c = c - 5;
-        x++;
-    }
+        while(c >= 10)
+        {
+            c -= 10;
+            x++;
+        }
 
-    while(c >= 1)
-    {
-        c = c - 1;
-        x++;
-    }
+        while(c >= 5)
+        {
+            c -= 5;
+            x++;
+        }
 
-    printf("You'll need at least %i coins\n", x);
+        while(c >= 1)
+        {
+            c -= 1;
+            x++;
+        }
+
+        printf("You'll need at least %i coins!\n", x);
+    }
 }

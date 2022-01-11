@@ -5,21 +5,23 @@ int get_mario_pyramid(void);
 
 int main(void)
 {
+    // Prompt the user for a height
     int h;
     do
     {
         h = get_int("Height: ");
     }
-    while(h < 1 || h > 8); // h = height
+    while(h < 1 || h > 8); 
 
-    for(int i = 0; i < h; i++) // i = row
+    // Mount the pyramid
+    for(int i = 0; i < h; i++) 
     {
-        for(int s = 0; s < h - i - 1; s++) // s = spaces
+        for(int s = 0; s < h - i - 1; s++) 
         {
             printf(" ");
         }
 
-        for(int j = 0; j <= i; j++) // j = column
+        for(int j = 0; j <= i; j++) 
         {
             printf("#");
         }

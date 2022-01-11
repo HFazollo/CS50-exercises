@@ -23,11 +23,14 @@ int main(int argc, string argv[1])
         }
     }
 
+    // Converting the string argv to int argv
     int k = atoi(argv[1]);
 
+    // Prompt the user for a text to cipher
     string ptext = get_string("Plaintext: ");
     printf("Ciphertext: ");
 
+    // Cipher the text and returns to the user
     for(int i = 0; i < ptext[i]; i++)
     {
         char c = ptext[i];

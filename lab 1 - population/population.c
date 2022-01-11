@@ -4,6 +4,7 @@
 
 int main(void)
 {
+    // Prompt the user for the initial size of the population
     long b;
     do
     {
@@ -11,6 +12,7 @@ int main(void)
     }
     while(b < 9);
 
+    // Prompt the user for the wanted size of the population
     int e;
     do
     {
@@ -18,6 +20,7 @@ int main(void)
     }
     while(e < b);
 
+    // Calculate the years needed to achieve the wanted size
     if(e == b)
     {
         printf("Years: 0\n");

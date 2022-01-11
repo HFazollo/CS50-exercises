@@ -4,6 +4,7 @@
 
 int main(void)
 {
+    // Prompt the user for the amount of change
     float change;
     do
     {
@@ -11,6 +12,7 @@ int main(void)
     }
     while(change < 0);
 
+    // Calculate the amount of coins needed and print the result
     if(change == 0)
     {
         printf("You'll need 0 coins!\n");

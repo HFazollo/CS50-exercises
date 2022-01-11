@@ -6,17 +6,16 @@ int main(void)
 {
 long  x = get_long("enter the credit card number");
 int  digit = 0, sum = 0;
-//digit is used for odd and even checker.
+// Digit is used for odd and even checker.
 long y = x;
 
-//checksum card digits
-
+// Checksum card digits
 while (y != 0)
 {
     int sumeven = 0, sumodd = 0;
     int rem = y % 10;
     digit++;
-    if (digit % 2 == 0)                        //if digit is even
+    if (digit % 2 == 0)                        // If digit is even
     {
         int multiply = rem * 2;
         if (multiply == 0)
@@ -26,34 +25,31 @@ while (y != 0)
 
         else
         {
-            while (multiply != 0)                   //adding all  digits after
+            while (multiply != 0)                   // Adding all  digits after
             {
                 sumeven += multiply % 10;
-                multiply /= 10;                   //minus last digit of multiply
+                multiply /= 10;                   // Minus last digit of multiply
             }
         }
     }
-    else                                 //if digit is odd
+    else                                 // If digit is odd
     {
         sumodd += rem;
     }
-    y /= 10;                              //minus last digit from y
+    y /= 10;                              // Minus last digit from y
 
     sum += sumeven + sumodd;
 }
 
-
-
-
-//check for valid credit card
-if (digit != 13 && digit != 15 && digit != 16) //for first if
+// Check for valid credit card
+if (digit != 13 && digit != 15 && digit != 16) // For first if
 {
     printf("INVALID\n");
 }
 
 else if (sum % 10 == 0)
 {
-    if (digit == 16) //if digit is 16
+    if (digit == 16) // If digit is 16
     {
         if (x / 100000000000000 >= 51 && x / 100000000000000 <= 55)
         {
@@ -63,7 +59,7 @@ else if (sum % 10 == 0)
         {
             printf("VISA\n");
         }
-        else    //if digit is not 16
+        else    // If digit is not 16
         {
             printf("INVALID\n");
         }
@@ -81,8 +77,6 @@ else if (sum % 10 == 0)
         }
     }
 
-
-
     else  if (digit == 13)
     {
         if (x / 1000000000000 == 4)
@@ -97,7 +91,6 @@ else if (sum % 10 == 0)
     }
 
 }
-
 
 else
 {
